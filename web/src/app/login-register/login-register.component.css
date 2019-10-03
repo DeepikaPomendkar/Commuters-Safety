@@ -1,0 +1,33 @@
+.navbar1{
+  background-color: #2aa6cc;
+  width: 100% !important;
+  font-family: Bahnschrift;
+}
+
+.BtnForNav{
+  font-size: 25px !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 0 20px;
+}
+.center-content{
+  align-content: center;
+  text-align: center;
+}
+
+
+.CardImage{
+  margin: 0px;
+  border: none;
+}
+
+.jumbotron{
+  padding: 0px !important;
+  height: 100vh;
+  border-radius: 0px !important;
+  width: 100vw;
+  overflow: hidden;
+}

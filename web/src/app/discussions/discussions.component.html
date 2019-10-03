@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="card">
+    <img src="{{zone.zoneImage}}" class="card-img-top" alt="Tp">
+    <div class="card-body">
+      <h5 class="card-title">{{zone.zoneTitle}}</h5>
+      <p class="card-text">{{zone.zoneData}}</p>
+      <p class="card-text">Solution : {{zone.zoneSolution}}</p>
+      <p class="card-text">Upvote : {{zone.zoneStatusUpVote}}</p>
+      <p class="card-text">DownVote : {{zone.zoneStatusDownVote}}</p>
+    </div>
+  </div>
+  <h3>Discussions</h3>
+  <div class="mainContent">
+    <div #scroller class="feedWrapper">
+      <app-feed [zoneKey] = zone.$key ></app-feed>
+    </div>
+  </div>
+  <div class="chatFormWrapper">
+    <app-chat-form [zoneKey] = zone.$key ></app-chat-form>
+  </div>
+</div>

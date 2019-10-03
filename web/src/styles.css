@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+/** {*/
+/*  height: 100%;*/
+/*  box-sizing: border-box;*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  border: 0;*/
+/*}*/
+
+app-chatroom {
+  display: flex;
+  flex-direction: column;
+}
+
+app-chat-form{
+  width: 100%;
+  display: flex;
+  white-space: nowrap;
+
+}
+
+.message {
+  display: block;
+  height: auto;
+}

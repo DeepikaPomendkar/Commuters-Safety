@@ -1,0 +1,26 @@
+<div class="container-fluid row center-content">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <br>
+    <form [formGroup]="registerForm" >
+      <div class="form-group">
+
+        <input formControlName="email" type="email" class="form-control" placeholder="Email" name="email"
+               required email>
+
+        <br>
+        <input formControlName="password" type="password" class="form-control" placeholder="Password" name="password"/>
+
+        <label class="error">{{errorMessage}}</label>
+        <h1 class="success">{{successMessage}}</h1>
+        <br>
+        <button type="submit" (click)="tryRegister(registerForm.value)" class="btn btn-primary">Get Started!</button>
+        <br>
+        <br>
+        <button style="margin-right: 10px" type="button" (click)="tryGoogleLogin()" class="btn btn-success">SignUp With Google</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-4"></div>
+</div>
+

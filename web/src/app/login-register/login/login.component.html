@@ -1,0 +1,20 @@
+<div class="container-fluid row center-content">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <br>
+    <form [formGroup]="loginForm" class="form-custom center-content" >
+      <div class="form-group">
+        <input type="email" formControlName="email"  class="form-control" placeholder="Email" name="email"  required email>
+        <br>
+        <input type="password" formControlName="password" class="form-control" placeholder="Password" name="password" />
+        <label class="error">{{errorMessage}}</label>
+        <br>
+        <div class="row">
+          <button type="submit" (click)="tryLogin(loginForm.value)" class="btn btn-info form-control col">Login</button>
+          <button class="btn btn-success form-control col" routerLink="register" >For Sign up, click here!</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-4"></div>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {ZoneServiceService} from '../../shared/zone-service.service';
+import {ZoneShareService} from "../../shared/zone-share.service";
 @Component({
   selector: 'app-zone-list',
   templateUrl: './zone-list.component.html',
@@ -8,9 +9,12 @@ import {ZoneServiceService} from '../../shared/zone-service.service';
 })
 export class ZoneListComponent implements OnInit {
   commutersZone = [];
-  constructor(private zoneservice: ZoneServiceService) { }
+  zone : object ;
+  constructor(private zoneservice: ZoneServiceService,
+              private data : ZoneShareService
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(){
     this.zoneservice.getZone().subscribe(
       list => {
         this.commutersZone = list.map(item => {
@@ -19,8 +23,15 @@ export class ZoneListComponent implements OnInit {
             ...item.payload.val()
           };
         });
+        // console.log(this.commutersZone[0]);
       }
+
     );
+    this.data.currentZone.subscribe(zone=> this.zone = zone)
+  }
+  newZone(zone : object)
+  {
+    this.data.changeZone(zone);
   }
 
 }

@@ -12,8 +12,7 @@
           <th> ZoneDownVote </th>
           <th> ZoneUpVote</th>
           <th> ZoneData</th>
-          <th> Give Solution</th>
-
+          <th>Discussions</th>
 
           </thead>
           <tbody>
@@ -22,11 +21,11 @@
             <td>{{zone.zoneStatusUpVote}} <i class="fa fa-thumbs-up"></i></td>
             <td>{{zone.zoneStatusDownVote}} <i class="fa fa-thumbs-down"></i></td>
             <td>{{zone.zoneData}}</td>
-            <td> <a href="#">Click here!</a></td>
+            <td> <button routerLink="/discussions" (click) = "newZone(zone)" routerLinkActive="active">Click here</button>
           </tr>
           </tbody>
         </table>
       </div>
     </div>
 </div>
-
+<router-outlet></router-outlet>

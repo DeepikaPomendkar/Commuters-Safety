@@ -45,15 +45,27 @@
       <li class="nav-item active">
         <a class="nav-link" href="#"><h5>Home </h5><span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"><h5>Create a zone</h5></a>
-      </li>
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="#"><h5>Create a zone</h5></a>-->
+<!--      </li>-->
       <li class="nav-item">
         <a class="nav-link" href="#"><h5>Partners</h5></a>
       </li>
+      <div class="my-2 my-lg-0" *ngIf="!userPresent;else userProfileBlock">
+        <li class="nav-item">
+          <a class="nav-link" href="login-register"><h5>Login</h5></a>
+        </li>
+      </div>
       <li class="nav-item">
-        <a class="nav-link" href="#"><h5>About</h5></a>
+        <a class="nav-link" routerLink="about" routerLinkActive="active"><h5>About</h5></a>
       </li>
+      <ng-template #userProfileBlock>
+        <div>
+          <li class="nav-item">
+            <a class="nav-link" (click) = "logoutUser()"><h5>Logout</h5></a>
+          </li>
+        </div>
+      </ng-template>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search">
@@ -61,3 +73,4 @@
     </form>
   </div>
 </nav>
+<router-outlet></router-outlet>
